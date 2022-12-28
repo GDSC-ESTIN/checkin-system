@@ -1,0 +1,20 @@
+{
+  "name": "backend-checkin-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "csvtojson": "^2.0.10",
+    "express": "^4.18.2",
+    "json-2-csv": "^3.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
