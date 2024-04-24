@@ -28,13 +28,25 @@ async function generateQRCodes(rows, imagesFolder) {
 
 // Function to write rows to a CSV file
 async function writeCSV(filePath, rows) {
-	let csvContent = "email,firstname,lastname,checked,id\n";
+	let csvContent = Object.keys(rows[0]).join(",") + "\n";
 	rows.forEach((row) => {
-		csvContent += `${row.email},${row.firstname},${row.lastname},${false},${row.id}\n`;
+		csvContent += Object.values(row).join(",") + "\n";
 	});
 	fs.writeFileSync(filePath, csvContent);
 }
 
+async function AppendRowInCSV(filePath, row) {
+	const csvContent = Object.values(row).join(",") + "\n";
+	fs.appendFileSync(filePath, csvContent);
+}
+
+module.exports = {
+	readCSV,
+	generateIDs,
+	generateQRCodes,
+	writeCSV,
+	AppendRowInCSV
+};
 
 
 
@@ -55,8 +67,8 @@ const initChecking = async (inputFile, outputFile, imagesFolder) => {
 
 
 
-const inputFile = "data.csv"; //this file has to exist, has to contain 'email', and other fields
-const outputFile = "data-with-id.csv"; // here we will save the data with the generated IDs and checked status (will be used to sending emails and checking in)
+const inputFile = "data/_test.csv"; //this file has to exist, has to contain 'email', and other fields
+const outputFile = "data/_test-with-id.csv"; // here we will save the data with the generated IDs and checked status (will be used to sending emails and checking in)
 const imagesFolder = "images"; //make sure this folder exists
 
 initChecking(inputFile, outputFile, imagesFolder);
