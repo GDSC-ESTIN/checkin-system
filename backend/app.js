@@ -44,20 +44,23 @@ app.post("/api/v1/postData", async (req, res) => {
         if (!found) {
             return res.status(404).json({ message: "Person not found!" })
         }
-        await converter.json2csv(jsonDB, (err, csv) => {
+        converter.json2csv(jsonDB, (err, csv) => {
             fs.writeFileSync("./DB.csv", csv)
         })
         res.status(200).json({
             email: person.email,
-            firstname: person.firstname,
-            lastname: person.lastname,
-            workshop: person.domain,
-            message: `${person.email} : ${person.firstname} ${person.lastname} ${person.domain}`
+            username: person.username,
+            teamName: person.teamName,
+            tShirt: person.tShirt,
+            // firstname: person.firstname,
+            // lastname: person.lastname,
+            // workshop: person.domain,
+            // message: `${person.email} : ${person.firstname} ${person.lastname} ${person.domain}`
         })
     } catch (error) {
         console.log(error);
     }
 })
 
-const port = 5000
+const port = 5001
 start()

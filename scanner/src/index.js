@@ -21,7 +21,7 @@ root.render(
 function Application() {
   const darkTheme = createTheme({
     palette: {
-      mode: 'dark',
+      mode: 'light',
     },
   });
   return (

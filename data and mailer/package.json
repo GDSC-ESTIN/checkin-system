@@ -3,6 +3,8 @@
     "bottleneck": "^2.19.5",
     "csv-parser": "^3.0.0",
     "dotenv": "^16.0.3",
+    "jimp": "^0.22.12",
+    "jsqr": "^1.4.0",
     "nodemailer": "^6.8.0",
     "qrcode": "^1.5.1",
     "uuid": "^9.0.0"

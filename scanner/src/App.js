@@ -4,13 +4,15 @@ import Button from '@mui/material/Button';
 import { Grid } from "@mui/material";
 import VideocamIcon from '@mui/icons-material/Videocam';
 import VideocamOffIcon from '@mui/icons-material/VideocamOff';
-import logo from "./assets/gdsc_logo_white.png";
+// import logo from "./assets/gdsc_logo_white.png";
+import logo from "./assets/logo svg.svg";
+
 import Accepted from "./Accepted"
 import { AcceptedTag, RefusedTag, AllreadyAcceptedTag } from "./Tags"
 import { Loader } from '@mantine/core';
 
 
-const url = "http://127.0.0.1:5000/api/v1/postData"
+const url = "http://127.0.0.1:5001/api/v1/postData"
 
 
 export default function App() {
@@ -46,7 +48,7 @@ export default function App() {
   return (
     <div>
       <center>
-        <img alt="logo" style={{ zoom: "0.6", margin: "20px" }} src={logo} />
+        <img alt="logo" style={{ zoom: "0.6", margin: "20px", width: 300 }} src={logo} />
       </center>
       <Grid container spacing={2}>
         <Grid item xs={6}>
